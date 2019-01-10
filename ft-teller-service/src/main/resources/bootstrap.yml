@@ -1,3 +1,6 @@
 spring:
   application:
     name: ft-teller-service
+    
+  profiles: 
+    active: dev    
