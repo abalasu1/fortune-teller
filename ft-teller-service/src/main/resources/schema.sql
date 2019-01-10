@@ -1,0 +1,1 @@
+CREATE TABLE fortunes (id INTEGER, text VARCHAR(120), PRIMARY KEY (id));

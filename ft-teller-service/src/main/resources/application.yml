@@ -1,0 +1,51 @@
+spring:
+  profiles: 
+    active: dev
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      environment: ${spring.profiles}
+---
+spring:
+  profiles: dev
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+  jpa:
+    hibernate:
+      ddl-auto: update  
+  
+server:
+  port: 8001
+  
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+---
+spring:
+  profiles: prod
+  jpa:
+    hibernate:
+      ddl-auto: update  
+  
+server:
+  port: 9001
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true  
