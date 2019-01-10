@@ -1,3 +1,6 @@
 spring:
   application:
     name: ft-discovery-service
+    
+  profiles: 
+    active: dev    
