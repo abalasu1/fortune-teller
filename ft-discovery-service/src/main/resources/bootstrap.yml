@@ -3,4 +3,4 @@ spring:
     name: ft-discovery-service
     
   profiles: 
-    active: dev    
+    active: dev
